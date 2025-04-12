@@ -84,7 +84,8 @@ setInterval(updateClock, 1000);
   // weather
   async function fetchWeather() {
     const weatherContainer = document.getElementById('weather-info');
-    const WEATHER_API_KEY= b127839c858449a6827194332251204;
+    const WEATHER_API_KEY = process.env.WEATHER_API_KEY; 
+;
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
@@ -141,7 +142,7 @@ window.onload = fetchWeather;
           .then(response => response.json())
           .then(data => {
               const newsContainer = document.getElementById('news');
-              newsContainer.innerHTML = '';  // Clear existing content
+              newsContainer.innerHTML = '';  
   
               if (data.articles && data.articles.length > 0) {
                   const newsList = document.createElement('ul');
@@ -168,5 +169,5 @@ window.onload = fetchWeather;
   }
   
   window.onload = function() {
-      fetchNews(); // Fetch news when the page loads
+      fetchNews(); 
   };
