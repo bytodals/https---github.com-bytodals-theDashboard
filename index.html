@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  
+  <div class="clock-container">
+    <div class="clock" id="clock">Loading time...</div>
+    <div class="date" id="date">Loading date...</div>
+  </div>
+
+  <header> 
+    <h1 id="dashboard-title" contenteditable="true" class="title">My Dashboard</h1>
+  </header>
+
+  <div class="gridbox">
+
+    <div class="widget" id="links-widget">
+      <h2>Your Links</h2>
+      <ul id="link-list"></ul>
+      <input type="text" id="link-name" placeholder="Link title">
+      <input type="text" id="link-url" placeholder="https://example.com">
+      <button onclick="addLink()">Add Link</button>
+    </div>
+  
+    <div id="weather" class="widget">
+      <h2>Weather</h2>
+        <p id="weather-info">Loading weather...</p>
+    </div>
+
+    <div id="notes" class="widget">
+      <h2>Notes</h2>
+        <textarea id="note-area" placeholder="Write here..."></textarea>
+    </div>
+
+    <div id="custom-api" class="widget">
+      <h2>News</h2>
+        <div id="news">
+          Loading news...
+        </div>
+    </div>
+
+  </div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
