@@ -84,8 +84,7 @@ setInterval(updateClock, 1000);
   // weather
   async function fetchWeather() {
     const weatherContainer = document.getElementById('weather-info');
-    const WEATHER_API_KEY = process.env.WEATHER_API_KEY; 
-;
+    const WEATHER_API_KEY = window.WEATHER_API_KEY;
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
@@ -123,7 +122,7 @@ setInterval(updateClock, 1000);
 }
 
 
-window.onload = fetchWeather;
+window.addEventListener('load', fetchWeather);
 
 
   // notes
@@ -134,7 +133,7 @@ window.onload = fetchWeather;
   });
 
   //news
-  const apiKey = process.env.apiKey; 
+  const apiKey = window.apiKey; 
   const newsUrl = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${apiKey}`;
   
   function fetchNews() {
